@@ -1,0 +1,6 @@
+C:\Users\ham_c\Documents\Visual Studio 2017\Projects\Statcal\Statcal\bin\Debug\Statcal.exe.config
+C:\Users\ham_c\Documents\Visual Studio 2017\Projects\Statcal\Statcal\bin\Debug\Statcal.exe
+C:\Users\ham_c\Documents\Visual Studio 2017\Projects\Statcal\Statcal\bin\Debug\Statcal.pdb
+C:\Users\ham_c\Documents\Visual Studio 2017\Projects\Statcal\Statcal\obj\Debug\Statcal.csprojResolveAssemblyReference.cache
+C:\Users\ham_c\Documents\Visual Studio 2017\Projects\Statcal\Statcal\obj\Debug\Statcal.exe
+C:\Users\ham_c\Documents\Visual Studio 2017\Projects\Statcal\Statcal\obj\Debug\Statcal.pdb
