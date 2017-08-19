@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Statcal
 {
-    class Program
+    class Program //this is class named "Program"
     {
-        static void Main(string[] args)
+        static void Main(string[] args) //this is method called "Main"
         {
-            Statcal.StatisticCalculate Calc = new StatisticCalculate { };
+            Statcal.StatisticCalculate Calc = new StatisticCalculate { }; //define new varible type what is StatisticCalculate? let find out at StatisticCalculate.cs
             String Message="";
             Boolean Loop = true;
             String Memory_Display = "";
@@ -22,10 +22,19 @@ namespace Statcal
                     Memory_Display = Memory_Display + "[" + Memory_Index + "]" + Calc_Member_ToString + " ";
                     Memory_Index++;
                 }
-                Console.WriteLine("Enter some number to add it to the List or use following command : FindMode FindMed FindMean FindSD FindMax FindMin Edit Exit"+ System.Environment.NewLine+"List Of Number"+Memory_Display + System.Environment.NewLine + Message+ System.Environment.NewLine);
+                Console.WriteLine("Enter some number to add it to the List or use following command : FindMode FindMed FindMean FindSD FindMax FindMin Sort Edit Generate Help Exit"+ System.Environment.NewLine+"List Of Number"+Memory_Display + System.Environment.NewLine + Message+ System.Environment.NewLine);
                 String Function_Command = Console.ReadLine();
                 if (Function_Command.ToLower() == "findmed") {
                     Message = "Median = " + Calc.FindMedian();
+                }
+                else if (Function_Command.ToLower() == "help")
+                {
+                    Message = "Help Yourself";
+                }
+                else if (Function_Command.ToLower() == "sort")
+                {
+                    Calc.sort();
+                    Message = "sorted numbers";
                 }
                 else if (Function_Command.ToLower() == "findmode")
                 {
@@ -50,6 +59,26 @@ namespace Statcal
                 else if (Function_Command.ToLower() == "exit")
                 {
                     Loop = false;
+                }
+                else if (Function_Command.ToLower() == "generate")
+                {
+                    Console.WriteLine("(Warining!! this may take some times) Enter Configuration following "+System.Environment.NewLine+"NumberRange(Integer) NumberSize(Integer) Seed(Double) Negative(True/False) Decimal(True/False) Verbose(Integer!!enter 1 if you don't know)");
+                    string input = Console.ReadLine();
+                    List<string> input_splited = new List<string>(input.Split(' '));
+                    int NumberLength = Convert.ToInt32(input_splited[0]);
+                    int NumberSize = Convert.ToInt32(input_splited[1]);
+                    double seed = Convert.ToDouble(input_splited[2]);
+                    bool Negative = false;
+                    bool Dec = false;
+                    if (input_splited[3].ToLower() == "true") {
+                        Negative = true;
+                    }
+                    if (input_splited[4].ToLower() == "true")
+                    {
+                        Dec = true;
+                    }
+                    Calc.generate(NumberLength,NumberSize,seed,Negative,Dec,Convert.ToInt32(input_splited[5]));
+                    Message = "Numbers generating were success";
                 }
                 else if (Function_Command.ToLower() == "edit")
                 {
